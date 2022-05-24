@@ -1,0 +1,11 @@
+button {
+    display: block;
+    margin: 0 auto;
+    clear: both;
+  }
+
+.container{
+    border: 2px solid black;
+    width: 100%;
+    height: 300px;
+}

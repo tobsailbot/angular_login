@@ -1,0 +1,54 @@
+
+
+<!-- <h2>Nombre:</h2>
+<div *ngIf=!hide> {{bodyGet.nombre}}</div>
+<input *ngIf=hide type="text" value={{bodyGet.nombre}} #nombreElem />
+
+<br>
+<button *ngIf=hide (click)="putValues()">Save</button>
+
+<button *ngIf=!hide (click)="editValues()">Edit</button>
+
+<br>
+<br>
+<br>
+<br>
+
+<div *ngFor="let item of bodyGet | keyvalue">
+    <h3>{{item.key | uppercase }}</h3>
+
+    <div> {{item.value}} </div>
+    <input type="text" value={{item.value}} #{{item.key}}Elem />
+    
+  </div>
+
+<br> -->
+
+
+
+
+<h2>Nombre:</h2>
+<div > {{bodyGet.nombre}}</div>
+<!-- <input  type="text" value={{bodyGet.nombre}} #nombreElem /> -->
+
+<br>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<div *ngFor="let item of bodyGet | keyvalue">
+    <h3>{{item.key | uppercase }}</h3>
+
+    <div> {{item.value}} #{{item.key}}Elem </div>
+    <input type="text" value={{item.value}} #nombre />
+    
+  </div>
+
+<br>
+
+<button (click)="putValues()">Save</button>
+
+<button (click)="editValues()">Edit</button>

@@ -1,0 +1,26 @@
+
+
+<!-- <input (keydown)="onKey($event)">
+<div>{{Ivalue}}</div> -->
+
+
+
+<!-- <div *ngFor="let item of bodyGet | keyvalue">
+
+  <h3>{{item.key | uppercase }}</h3>
+
+  <div *ngIf=!hide> {{item.value}} </div>
+  <input *ngIf=hide type="text" name={{item.key}} (focusout)="onKey($event)" value={{item.value}}/>
+
+
+</div> -->
+
+
+<input *ngIf=hide type="text" name="url" (focusout)="onKey($event)" onClick="this.select();" value={{bodyGet.url}}/>
+<img src={{bodyGet.url}} alt="MDN">
+
+<br>
+
+<button  *ngIf=hide (click)="saveVal()"> Guardar </button>
+
+<button *ngIf=!hide (click)="editVal()"> Editar</button>
