@@ -16,11 +16,7 @@
 </div> -->
 
 
-<input *ngIf=hide type="text" name="url" (focusout)="onKey($event)" onClick="this.select();" value={{bodyGet.url}}/>
-<img src={{bodyGet.url}} alt="MDN">
-
+<h2>Estado del Login:</h2>
 <br>
-
-<button  *ngIf=hide (click)="saveVal()"> Guardar </button>
-
-<button *ngIf=!hide (click)="editVal()"> Editar</button>
+<h3> ---- {{is_logged}}</h3>
+<button *ngIf="is_logged" (click)="Editar()">Boton de editar</button>

@@ -34,8 +34,16 @@ export class AppComponent {
   
   login = false;
 
+  is_user_logged_in = false;
+
   onClick() {
     this.login = !this.login;
+  }
+
+  receiveData(event:any) {
+    console.log(event);
+    this.login = !this.login;
+    this.is_user_logged_in = true;
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { LoginTestService } from '../login-test.service';
 
 @Component({
   selector: 'app-input-test',
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class InputTestComponent implements OnInit {
 
-  constructor() { }
+  public data:any = false;
+
+  public constructor(private myService: LoginTestService) {}
+
+  @Output() loginEvent = new EventEmitter<boolean>();
 
   ngOnInit(): void {
   }
@@ -31,9 +36,12 @@ export class InputTestComponent implements OnInit {
      }
       else {
         this.consola = "CORRECTO! Usuario y contraseña correctos";
+        this.data = true;
+        this.myService.myMethod(this.data);
+        this.loginEvent.emit(this.data);
       }
       this.ngOnInit();
-
+      
    }
 
 

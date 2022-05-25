@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { of } from 'rxjs';
+import { LoginTestService } from '../login-test.service';
 
 @Component({
   selector: 'app-testeoeo',
@@ -10,7 +11,17 @@ export class TesteoeoComponent implements OnInit {
 
   hide = false;
 
-  constructor() { }
+  is_logged = false;
+
+  login_dom:any;
+
+
+    public constructor(private myService: LoginTestService) {
+        this.myService.myMethod$.subscribe((data) => {
+                this.is_logged = data;
+            }
+        );
+    }
 
   ngOnInit(): void {
 
@@ -57,5 +68,9 @@ export class TesteoeoComponent implements OnInit {
     this.hide = true;
   }
 
+  Editar(){
+    this.hide = true;
+    this.ngOnInit;
+  }
 
 }
